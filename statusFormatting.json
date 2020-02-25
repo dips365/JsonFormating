@@ -1,0 +1,33 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/column-formatting.schema.json",
+    "elmType": "div",
+    "children": [
+      {
+        "elmType": "span",
+        "style": {
+          "width": "14px",
+          "height": "14px",
+          "border-radius": "50%"
+        },
+        "attributes": {
+          "class": "=if(@currentField == 'Open', 'ms-bgColor-green', if(@currentField == 'Assigned', 'ms-bgColor-yellow', if(@currentField == 'In Progress', 'ms-bgColor-red', if(@currentField == 'Closed','ms-bgcolor-red',if(@currentField == 'On Hold','ms-bgcolor-red',if(@currentField == 'Cancelled','ms-bgcolor-red',''))))))"
+        }
+      },
+      {
+          "elmType": "span",
+          "txtContent":"@currentField",
+          "style":{
+            "margin-left": "0.5em",
+            "display": "inline-block",
+            "padding": "10px 10px 10px 10px",
+            "background-color":"=if(@currentField == 'Open', '#98FB98', if(@currentField == 'Assigned', '#FFFF33', if(@currentField == 'In Progress', '#FF6347', if(@currentField == 'Closed','#FF6347',if(@currentField == 'On Hold','#FF6347',if(@currentField == 'Cancelled','#FF6347',''))))))"
+          }
+      }
+    ]
+}
+  
+  
+  
+  
+  
+  
