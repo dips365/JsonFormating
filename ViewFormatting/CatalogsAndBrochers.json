@@ -1,0 +1,50 @@
+{
+  "schema": "https://developer.microsoft.com/json-schemas/sp/view-formatting.schema.json",
+  "hideColumnHeader": true,
+  "rowFormatter": {
+    "elmType": "div",
+    "attributes": {
+      "class": "ms-fontColor-neutralDark ms-fontColor-themePrimary--hover"
+    },
+    "style": {
+      "font-size": "24px",
+      "height": "100%"
+    },
+    "children": [
+      {
+        "elmType": "span",
+        "style": {
+          "display": "=if([$ContentType]=='Folder','block','none')"
+        },
+        "attributes": {
+          "iconName": "FabricFolderFill"
+        }
+      },
+      {
+        "elmType": "img",
+        "style": {
+          "display": "=if([$ContentType]=='Folder','none','block')"
+        },
+        "attributes": {
+          "src": "@thumbnail.small"
+        }
+      },
+      {
+        "elmType": "span",
+        "style": {
+          "display": "=if([$ContentType]=='Folder','block','none')",
+          "padding-left": "8px"
+        },
+        "txtContent": "[$FileLeafRef]"
+      },
+      {
+        "elmType": "span",
+        "style": {
+          "display": "=if([$ContentType]=='Folder','none','block')",
+          "padding-left": "8px"
+        },
+        "txtContent": "=if(length([$Title]),[$Title],substring([$FileLeafRef],0,indexOf([$FileLeafRef],'.')))"
+      }
+    ]
+  }
+}
