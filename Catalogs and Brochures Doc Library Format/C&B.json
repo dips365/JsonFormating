@@ -12,7 +12,7 @@
       "box-sizing": "border-box",
       "width": "100%",
       "border-width": "1px",
-      "border-style": "solid",
+      "border-style": "none",
       "padding": "0 0 0 20px",
       "margin-bottom": "10px",
       "align-items": "stretch"
@@ -30,9 +30,8 @@
             {
             "elmType": "div",
             "style": {
-              "flex": "1 0 300px",
               "box-sizing": "border-box",
-              "padding": "10px"
+              "padding": "7px"
             },
             "children": [
               {
@@ -42,7 +41,6 @@
                 },
                 "style": {
                   "line-height": "1.5em",
-                  "margin-bottom": "1em",
                   "border": "0",
                   "padding": "0px",
                   "color": "#ff002f",
@@ -53,19 +51,19 @@
                 "customRowAction": {
                   "action": "defaultClick"
                 }
-              },
-              {
-                "elmType": "div",
-                "attributes": {
-                  "class": "ms-fontSize-s"
-                },
-                "style": {
-                  "line-height": "1.5em",
-                  "margin-bottom": "8px"
-                },
-                "txtContent": "='Modified by ' + [$Editor.title] + ', ' + toLocaleString([$Modified])"
               }
             ]
+          },
+          {
+            "elmType": "span",
+            "style": {
+              "margin-top": "16px",
+              "color":"#ff002f"
+            },
+            "attributes": {
+              "iconName": "=if([$ContentType]=='Folder','FabricFolderFill','Document')",
+              "class": "ms-fontSize-xl"
+            }
           }
         ]
       }
